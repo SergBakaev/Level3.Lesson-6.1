@@ -1,0 +1,29 @@
+import org.junit.Assert;
+import org.junit.Test;
+
+public class TestArray {
+    @Test
+    public void test1arrayAfter4(){
+        int[] in = new int[]{1, 2, 4, 4, 2, 3, 4, 1, 7};
+        int[] out = new int[]{1,7};
+        Assert.assertArrayEquals(out, MyClass.arrayAfter4(in));
+    }
+
+    @Test(expected =  RuntimeException.class)
+    public void test2arrayAfter4() {
+        int[] in = new int[]{7, 5, 1};
+        MyClass.arrayAfter4(in);
+    }
+
+    @Test
+    public void test1arrayOnly1and4(){
+        int [] in = new int[]{1, 1, 1, 4, 4, 1, 4, 4};
+        Assert.assertTrue(MyClass.arrayOnly1and4(in));
+    }
+
+    @Test
+    public void test2arrayOnly1and4(){
+        int [] in = new int[]{1, 1, 1, 1, 1, 1};
+        Assert.assertFalse(MyClass.arrayOnly1and4(in));
+    }
+}
